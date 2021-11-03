@@ -12,11 +12,18 @@ M. R. Shahid and H. Debar , "CVSS-BERT: Explainable Natural Language Processing 
 ## Content
 
 The repo is organized as follows:
+- demo_notebook.ipynb: An annotated notebook describing step by step the code for data preprocessing, classifiers training and testing, and the computing of input tokens importance score (as determine by gradient-based input saliency method). A must-read for anyone looking at the project for the first time.
 - data: contains the data used for the project.
 - models: contains the trained models
-- explainable_bert_classifier: a package that contains all the necessary codes within 3 modules (details provided below)
+- explainable_bert_classifier: a package that contains all the necessary codes within 3 modules (more details provided below)
 - app: Contains two sub-directory v1 and v2. v1 contains a Dockerfile two deploy the developed models in a containerized application using FastAPI. v2 also contains a docker-compose.yml file and allow the deployment of a stack of 2 containers, one to serve the models using FastAPI, the other to save the queries along with the predictions in a MongoDB database.
-- demo_notebook.ipynb:
-- train.py:
+- train.py: Automate the training process described in demo_notebook.ipynb. 
+
+### explainable_bert_classifier package content
+The package contains 3 modules:
+- *explainable_bert_classifier.data*: contains all the necessary functions and classes definitions for data preprocessing and manipulations.
+- *explainable_bert_classifier.model*: contains all the necessary functions and classes definitions to create and use a BERT classifier (training, testing, freeze/unfreeze layers, early stopping, etc)
+- *explainable_bert_classifier.input_saliency_maps*: contains all the necessary functions to compute the importance/relevance of each input tokens for a given preditcion as determined by gradient-based input saliency method (including functions to print the text in a fancy manner with important tokens in bold).
+The folder also contains a *test.py* file that contains a set of tests for the function defined in the different modules. It is not complete and does not include tests for all the functions yet.
 
 
