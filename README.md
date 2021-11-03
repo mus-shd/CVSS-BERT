@@ -42,4 +42,19 @@ You can repalce "cvss-bert" by any custom name you want for your Docker image.
 ```
 docker run -d -p 8080:8000 cvss-bert
 ```
-This will redirect the traffic sent to the port 8080 of our local machine to the port 8000 of the container (which is the port used by FastAPI to serve the models)
+This will redirect the traffic sent to the port 8080 of our local machine to the port 8000 of the container (which is the port used by FastAPI to serve the models). The container can be stoped using the following command:
+```
+docker stop ID_OF_THE_CONTAINER
+```
+ID_OF_THE_CONTAINER is returned when you run the Docker image or can be found by running:
+```
+docker ps
+```
+- Run the application contained in ./app/v2/ (it differs from ./app/v1/ in that it runs 2 containers, one for models serving and one for storing queries and predictions data) using the following command (the command must be run from ./app/v2/ where the docker-compose.yml file is located):
+```
+docker-compose up -d
+```
+To stop the stack of containers, run the following command:
+```
+docker-compose stop
+```
