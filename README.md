@@ -12,12 +12,12 @@ M. R. Shahid and H. Debar , "CVSS-BERT: Explainable Natural Language Processing 
 ## Content
 
 The repo is organized as follows:
-- demo_notebook.ipynb: An annotated notebook describing step by step the code for data preprocessing, classifiers training and testing, and the computing of input tokens importance score (as determine by gradient-based input saliency method). A must-read for anyone looking at the project for the first time.
-- data: contains the data used for the project.
-- models: contains the trained models
-- explainable_bert_classifier: a package that contains all the necessary codes within 3 modules (more details provided below)
-- app: Contains two sub-directory v1 and v2. v1 contains a Dockerfile two deploy the developed models in a containerized application using FastAPI. v2 also contains a docker-compose.yml file and allow the deployment of a stack of 2 containers, one to serve the models using FastAPI, the other to save the queries along with the predictions in a MongoDB database.
-- train.py: Automate the training process described in demo_notebook.ipynb. 
+* demo_notebook.ipynb: An annotated notebook describing step by step the code for data preprocessing, classifiers training and testing, and the computing of input tokens importance score (as determine by gradient-based input saliency method). A must-read for anyone looking at the project for the first time.
+* data: contains the data used for the project.
+* models: contains the trained models
+* explainable_bert_classifier: a package that contains all the necessary codes within 3 modules (more details provided below)
+* app: Contains two sub-directory v1 and v2. v1 contains a Dockerfile two deploy the developed models in a containerized application using FastAPI. v2 also contains a docker-compose.yml file and allow the deployment of a stack of 2 containers, one to serve the models using FastAPI, the other to save the queries along with the predictions in a MongoDB database.
+* train.py: Automate the training process described in demo_notebook.ipynb. 
 
 ### explainable_bert_classifier package content
 
@@ -30,5 +30,16 @@ The folder also contains a *test.py* file that contains a set of tests for the f
 
 
 ### additional notes on Docker application deployment to serve the model using FastAPI
-Steps to build and run the docker images contained under app/v1/ and app/v2/
-- Make sure the ./app/v1/models/ (or ./app/v2/models/) directory is not empty and contains the same content as the one provided under ./models/ (if this is not the case populate the directory by copy pasting the content from ./models/)
+Steps to build and run the docker images contained under ./app/v1/ (models served using FastAPI) and ./app/v2/ (models served using FastAPI. Additionally, queries and predictions are stored in a MongoDB database):
+- Make sure Docker is installed on your machine.
+- Make sure the ./app/v1/models/ (or ./app/v2/models/) directory is not empty and contains the same content as the one provided under ./models/ (if this is not the case populate the directory by copy pasting the content from ./models/).
+- To build the docker image containing the FastAPI application go to the directory containing the Dockerfile (./app/v1 or app/v2/.) and run the following command:
+```
+docker build -t cvss-bert .
+```
+You can repalce "cvss-bert" by any custom name you want for your Docker image.
+- Run the Docker image for ./app/v1/ using the following command:
+```
+docker run -d -p 8080:8000 
+```
+This will redirect the traffic sent to the port 8080 of our local machine to the port 8000 of the container (which is the port used by FastAPI to serve the models)
