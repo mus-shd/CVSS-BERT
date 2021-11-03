@@ -29,7 +29,7 @@ The package contains 3 modules:
 The folder also contains a *test.py* file that contains a set of tests for the function defined in the different modules. It is not complete and does not include tests for all the functions yet.
 
 
-### additional notes on Docker application deployment to serve the model using FastAPI
+### additional notes on Docker application deployment to serve the models using FastAPI
 Steps to build and run the docker images contained under ./app/v1/ (models served using FastAPI) and ./app/v2/ (models served using FastAPI. Additionally, queries and predictions are stored in a MongoDB database):
 - Make sure Docker is installed on your machine.
 - Make sure the ./app/v1/models/ (or ./app/v2/models/) directory is not empty and contains the same content as the one provided under ./models/ (if this is not the case populate the directory by copy pasting the content from ./models/).
