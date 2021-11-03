@@ -29,3 +29,6 @@ The package contains 3 modules:
 The folder also contains a *test.py* file that contains a set of tests for the function defined in the different modules. It is not complete and does not include tests for all the functions yet.
 
 
+### additional notes on Docker application deployment to serve the model using FastAPI
+Steps to build and run the docker images contained under app/v1/ and app/v2/
+- Make sure the ./app/v1/models/ (or ./app/v2/models/) directory is not empty and contains the same content as the one provided under ./models/ (if this is not the case populate the directory by copy pasting the content from ./models/)
