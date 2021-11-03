@@ -26,7 +26,7 @@ The package contains 3 modules:
 - *explainable_bert_classifier.model*: contains all the necessary functions and classes definitions to create and use a BERT classifier (training, testing, freeze/unfreeze layers, early stopping, etc).
 - *explainable_bert_classifier.input_saliency_maps*: contains all the necessary functions to compute the importance/relevance of each input tokens for a given preditcion as determined by gradient-based input saliency method (including functions to print the text in a fancy manner with important tokens in bold).
 
-The folder also contains a *test.py* file that contains a set of tests for the function defined in the different modules. It is not complete and does not include tests for all the functions yet.
+The folder also contains a *test.py* file that contains a set of tests for the functions defined in the different modules. It is not complete and does not include tests for all the functions yet.
 
 
 ### additional notes on Docker application deployment to serve the models using FastAPI
