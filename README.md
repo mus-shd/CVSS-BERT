@@ -40,6 +40,6 @@ docker build -t cvss-bert .
 You can repalce "cvss-bert" by any custom name you want for your Docker image.
 - Run the Docker image for ./app/v1/ using the following command:
 ```
-docker run -d -p 8080:8000 
+docker run -d -p 8080:8000 cvss-bert
 ```
 This will redirect the traffic sent to the port 8080 of our local machine to the port 8000 of the container (which is the port used by FastAPI to serve the models)
