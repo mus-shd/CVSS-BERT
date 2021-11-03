@@ -33,7 +33,7 @@ The folder also contains a *test.py* file that contains a set of tests for the f
 Steps to build and run the docker images contained under ./app/v1/ (models served using FastAPI) and ./app/v2/ (models served using FastAPI. Additionally, queries and predictions are stored in a MongoDB database):
 - Make sure Docker is installed on your machine.
 - Make sure the ./app/v1/models/ (or ./app/v2/models/) directory is not empty and contains the same content as the one provided under ./models/ (if this is not the case populate the directory by copy pasting the content from ./models/).
-- To build the docker image containing the FastAPI application go to the directory containing the Dockerfile (./app/v1 or app/v2/.) and run the following command:
+- To build the docker image containing the FastAPI application go to the directory containing the Dockerfile (./app/v1 or ./app/v2/) and run the following command:
 ```
 docker build -t cvss-bert .
 ```
