@@ -15,8 +15,8 @@ The repo is organized as follows:
 * demo_notebook.ipynb: An annotated notebook describing step by step the code for data preprocessing, classifiers training and testing, and the computing of input tokens importance score (as determine by gradient-based input saliency method). A must-read for anyone looking at the project for the first time.
 * data: contains the data used for the project.
 * models: contains the trained models
-* explainable_bert_classifier: a package that contains all the necessary codes within 3 modules (more details provided below)
-* app: Contains two sub-directory v1 and v2. v1 contains a Dockerfile two deploy the developed models in a containerized application using FastAPI. v2 also contains a docker-compose.yml file and allow the deployment of a stack of 2 containers, one to serve the models using FastAPI, the other to save the queries along with the predictions in a MongoDB database.
+* explainable_bert_classifier: a package that contains all the necessary codes within 3 modules. More details provided below.
+* app: Contains two sub-directory v1 and v2. v1 contains a Dockerfile two deploy the developed models in a containerized application using FastAPI. v2 also contains a docker-compose.yml file and allow the deployment of a stack of 2 containers, one to serve the models using FastAPI, the other to save the queries along with the predictions in a MongoDB database. More details provided below.
 * train.py: Automate the training process described in demo_notebook.ipynb. 
 
 ### explainable_bert_classifier package content
