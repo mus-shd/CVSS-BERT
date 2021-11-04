@@ -16,8 +16,9 @@ The repo is organized as follows:
 * data: contains the data used for the project.
 * models: contains the trained models.
 * explainable_bert_classifier: a package that contains all the necessary codes within 3 modules. More details about the content of the package is provided below.
-* app: Contains two sub-directory v1 and v2. v1 contains a Dockerfile to deploy the developed models in a containerized application using FastAPI. v2 additionally contains a docker-compose.yml file and allow the deployment of a stack of 2 containers, one to serve the models using FastAPI, the other to save the queries along with the predictions in a MongoDB database. More details on how to run the applications are provided below.
-* train.py: Automate the training process described in demo_notebook.ipynb. 
+* app: contains two sub-directory v1 and v2. v1 contains a Dockerfile to deploy the developed models in a containerized application using FastAPI. v2 additionally contains a docker-compose.yml file and allow the deployment of a stack of 2 containers, one to serve the models using FastAPI, the other to save the queries along with the predictions in a MongoDB database. More details on how to run the applications are provided below.
+* train.py: automate the training process described in demo_notebook.ipynb.
+* CVSS_BERT__Explainable_Natural_Language_Processing_to_Determine_the_Severity_of_a_Computer_Security_Vulnerability_from_its_Description.pdf: the research paper corresponding to this repository. The reader will find further details about the data, models and methodology used.
 
 ### explainable_bert_classifier package content
 
