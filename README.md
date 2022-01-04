@@ -70,4 +70,3 @@ docker-compose stop
 We can check that FastAPI is running and interact with it at http://localhost:8080/docs 
 
 
-testing branching and merging
