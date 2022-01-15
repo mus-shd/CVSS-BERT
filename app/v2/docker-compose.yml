@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+
+  db:
+    image: mongo
+    container_name: MongoDB
+    command: mongod --auth --port 27017
+    restart: always
+    volumes:
+      - db_data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: fastapi
+      MONGO_INITDB_ROOT_PASSWORD: fastapi
+      MONGODB_DATA_DIR: /data/db
+
+  api:
+    container_name: FastAPI
+    depends_on:
+      - db
+    build: .
+    ports:
+      - "8000:8000"
+    restart: always
+    environment:
+      MONGODB_HOST: db:27017
+      MONGODB_USER: fastapi
+      MONGODB_PASSWORD: fastapi
+volumes:
+  db_data: {}

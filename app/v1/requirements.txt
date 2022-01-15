@@ -1,0 +1,6 @@
+cvss==2.2
+fastapi==0.70.0
+pydantic==1.8.2
+torch==1.8.0
+transformers==4.1.1
+uvicorn==0.14.0

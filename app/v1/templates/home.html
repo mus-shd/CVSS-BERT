@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title of the document</title>
+  </head>
+  <body>
+      <div style="margin:10em auto; width:50%; text-align:center;">
+        <form action="/predict" method="POST">
+          <p style="font-weight:bold; line-heigth:1.5rem; font-size:1.5rem">
+          <label for="description">Enter vulnerability description:</label>
+          </p>
+          <textarea id="description" class="text" cols="100" rows ="10" name="description"></textarea> <br>
+          <input style="margin:2em; border-radius:4px; line-heigth:1rem; font-size:1rem; padding: 10px 15px" type="submit" value="Submit" />
+          <p>
+              {{vector}}<br>
+              {{score}}<br>
+              {{rating}}
+          </p>
+        </form>
+      </div>   
+  </body>
+</html>

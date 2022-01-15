@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title of the document</title>
+  </head>
+  <body>
+    <form action="/predict" method="POST">
+      <label for="description">Enter vulnerability description:</label>
+      <textarea id="description" class="text" cols="50" rows ="20" name="description"></textarea>
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

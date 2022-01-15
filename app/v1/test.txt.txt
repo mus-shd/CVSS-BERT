@@ -1,0 +1,1 @@
+An issue was discovered in Verint Impact 360 15.1. At wfo/help/help_popup.jsp, the help URL parameter can be changed to embed arbitrary content inside of an iFrame. Attackers may use this in conjunction with social engineering to embed malicious scripts or phishing pages on a site where this product is installed, given the attacker can convince a victim to visit a crafted link.
